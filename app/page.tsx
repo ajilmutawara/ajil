@@ -8,7 +8,7 @@ import { Noto_Sans } from 'next/font/google';
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['300', '700'],
 });
 
 
@@ -219,7 +219,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className={`min-h-screen flex flex-col bg-[#444546] text-white ${notoSans.className}`} >
+    <div className={`min-h-screen flex flex-col bg-[#2B2C2D] text-white ${notoSans.className}`} >
       <header className="border-b border-gray-800 relative z-40">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center">
@@ -251,7 +251,7 @@ export default function LandingPage() {
                     <div className="flex p-6 border border-gray-800">
                       <div className="w-1/4 pr-6">
                         <Image src={item.image} alt={`${item.name} preview`} width={300} height={400} className="rounded-lg" />
-                        <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
+                        
                       </div>
                       <div className="w-3/4 pl-6 border-l border-gray-800">
                         <h3 className="text-2xl font-semibold mb-4">{item.name}</h3>
@@ -270,7 +270,7 @@ export default function LandingPage() {
                                 <div>
                                   <button
                                     onClick={() => toggleMenu(`${item.name}.${subItem.name}`)}
-                                    className="flex items-center w-full text-left font-semibold text-lg mb-2 transition-colors py-2"
+                                    className="flex items-center w-full text-left text-lg mb-2 transition-colors py-2"
                                     aria-expanded={isMenuActive(`${item.name}.${subItem.name}`)}
                                     aria-haspopup="true"
                                   >
@@ -380,12 +380,12 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>
           <div className="container mx-auto px-4 z-10 text-white">
             <div className="max-w-3xl">
-              <p className="text-lg md:text-xl mb-2">Superior Structural Performance and Regulation Compliant</p>
+              <p className="text-lg md:text-xl mb-6 ">Superior Structural Performance and Regulation Compliant</p>
               <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight" style={{ fontFamily: "'Noto Sans Condensed', sans-serif" }}>Building Solutions for Architectural and Functional Project Needs</h1>
               <p className="text-base md:text-lg mb-6 opacity-90">
                 We Are, Suppliers Of Superior Quality Products In Commercial UPS And Aluminum Profiles For Wide Applications To Saudi Arabian Projects. We Also Extend Supplier Integration Services With Our Key Strategic Partners In Consulting And End-to-end Project Implementation.
               </p>
-              <p className="text-lg md:text-xl mb-4 opacity-80">Discover How Our Innovative Products Can Elevate Your Next Project</p>
+              <p className="text-base md:text-lg mb-6 opacity-90">Discover How Our Innovative Products Can Elevate Your Next Project</p>
               <button className="bg-yellow-500 text-white-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors text-sm md:text-base">
                 Inquire Now
               </button>
@@ -394,7 +394,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-[#121212] text-white py-4 border-t border-gray-800">
+      <footer className="bg-[#FFB000] text-white py-4 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 Ajil Mutawara. All rights reserved.</p>
         </div>
