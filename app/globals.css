@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-noto-sans);
-  
+  font-family: 'Noto Sans', sans-serif;
 }
 
 

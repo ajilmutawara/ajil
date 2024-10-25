@@ -1,9 +1,16 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState, useRef, useEffect } from 'react'
-import { Menu, X, ChevronDown, ChevronRight, Linkedin, Phone, Globe, Search } from 'lucide-react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useRef, useEffect } from 'react';
+import { Menu, X, ChevronDown, ChevronRight, Linkedin, Phone, Globe, Search } from 'lucide-react';
+import { Noto_Sans } from 'next/font/google';
+
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 
 const menuItems = [
   {
@@ -212,7 +219,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#444546] text-white" style={{ fontFamily: "'Noto Sans Condensed', sans-serif" }}>
+    <div className={`min-h-screen flex flex-col bg-[#444546] text-white ${notoSans.className}`} >
       <header className="border-b border-gray-800 relative z-40">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center">
@@ -263,11 +270,11 @@ export default function LandingPage() {
                                 <div>
                                   <button
                                     onClick={() => toggleMenu(`${item.name}.${subItem.name}`)}
-                                    className="flex items-center justify-between w-full text-left font-semibold text-lg mb-2"
+                                    className="flex items-center w-full text-left font-semibold text-lg mb-2 transition-colors py-2"
                                     aria-expanded={isMenuActive(`${item.name}.${subItem.name}`)}
                                     aria-haspopup="true"
                                   >
-                                    <span>{subItem.name}</span>
+                                    <span className="mr-5">{subItem.name}</span>
                                     <ChevronDown size={16} />
                                   </button>
                                   {isMenuActive(`${item.name}.${subItem.name}`) && (
@@ -365,7 +372,7 @@ export default function LandingPage() {
         </div>
       </header>
 
-      <main className="flex-grow">
+      <main className="flex-grow" >
         <section 
           className="relative min-h-screen bg-cover bg-center flex items-center" 
           style={{ backgroundImage: 'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg")' }}
@@ -374,7 +381,7 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 z-10 text-white">
             <div className="max-w-3xl">
               <p className="text-lg md:text-xl mb-2">Superior Structural Performance and Regulation Compliant</p>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Building Solutions for Architectural and Functional Project Needs</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight" style={{ fontFamily: "'Noto Sans Condensed', sans-serif" }}>Building Solutions for Architectural and Functional Project Needs</h1>
               <p className="text-base md:text-lg mb-6 opacity-90">
                 We Are, Suppliers Of Superior Quality Products In Commercial UPS And Aluminum Profiles For Wide Applications To Saudi Arabian Projects. We Also Extend Supplier Integration Services With Our Key Strategic Partners In Consulting And End-to-end Project Implementation.
               </p>
