@@ -7,74 +7,109 @@ import { Menu, X, ChevronDown, ChevronRight, Linkedin, Phone, Globe, Search } fr
 
 
 
-
 const menuItems = [
+  {
+    name: 'Solutions',
+    href: '#',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
+    items: [
+      {
+        name: 'Aluminum Profiles',
+        href: '#aluminum-profiles',
+        items: [
+          'Doors & Windows',
+          'Sliding Doors and Lifts',
+          'Exterior Façade',
+          'Partition Systems',
+          'Roofs and Patio System',
+          'Smoke Protection Doors',
+          'B-Fold Systems',
+          'Panoramic Systems',
+          'Curtain Wall Systems',
+          'ACP for Cladding',
+        ]
+      },
+      {
+        name: 'Commercial UPS Systems',
+        href: '#commercial-ups',
+        items: [
+          'Stand By for Basic',
+          'Line Interactive for SMB and Server Rooms',
+          'Double conversion for Mission critical Operations',
+          'Modular for scalability',
+          'Industrial UPS',
+          'Lithium battery Storage Solutions'
+        ]
+      }
+    ],
+  },
+  {
+    name: 'Project Services',
+    href: '#',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
+    items: [
+      {
+        name: 'Supply Services',
+        href: '#solutions-consulting',
+        items: [
+          'Project Sales',
+          'B2B Sales',
+        ]
+      },
 
-    {
-      name: 'Solutions',
-      href: '#',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
-      items: [
-        'Aluminum Profiles',
-        'Sliding Doors and Lifts',
-        'Partition Systems',
-        'Smoke Protection Doors',
-        'Panoramic Systems',
-        'ACP for Cladding',
-        {
-          name: 'Commercial UPS Systems',
-          href: '#commercial-ups',
-          items: [
-            'Line Interactive for SMB and Server Rooms',
-            'Modular for scalability',
-            'Lithium battery Storage Solutions'
-          ]
-        }
-      ],
-    },
-    {
-      name: 'Project Services',
-      href: '#',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
-      items: [
-        'Supply Services',
-        'B2B Sales',
-        {
-          name: 'Solutions Consulting',
-          href: '#solutions-consulting',
-          items: [
-            'Power Capacity & load Requirements',
-            'Energy Efficiency and Cost Optimization',
-            'System Scalability and Future-Proofing',
-            'Compliance with Standards and Regulations',
-            'Backup System Design and Layout',
-            'Energy Storage System',
-            'Energy Efficiency and Insulation',
-            'Structural Integrity and Performance',
-            'Design Flexibility and Aesthetic Solutions',
-            'Regulatory Compliance',
-            'Acoustic and Soundproofing Requirements',
-            'Environmental Sustainability and Material Selection',
-            'Custom Engineering and Project-Specific Designs'
-          ]
-        }
-      ],
-    },
-    { name: 'References', href: '#',image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg', },
-    {
-      name: 'About us',
-      href: '#',
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
-      items: [
-        'Partner with us',
-        'Our Quality Commitment',
-        'Downloads',
-        'OEM Implementation Services',
-        'Sliding Doors and Lifts'
-      ],
-    },
-    { name: 'Downloads', href: '#' },
+      {
+        name: 'Solutions Consulting',
+        href: '#solutions-consulting',
+        items: [
+          'Commercial UPS',
+          'Power Capacity & load Requirements',
+          'Energy Efficiency and Cost Optimization',
+          'System Scalability and Future-Proofing',
+          'Compliance with Standards and Regulations',
+          'Backup System Design and Layout',
+          'Energy Storage System',
+          'Aluminum Profile Systems Consulting',
+          'Energy Efficiency and Insulation',
+          'Structural Integrity and Performance',
+          'Design Flexibility and Aesthetic Solutions',
+          'Regulatory Compliance',
+          'Acoustic and Soundproofing Requirements',
+          'Environmental Sustainability and Material Selection',
+          'Custom Engineering and Project-Specific Designs'
+        ]
+      }
+    ],
+  },
+  {
+    name: 'References',
+    href: '#',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
+  },
+  {
+    name: 'About us',
+    href: '#',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg',
+    items: [
+      'About Us',
+      'Partner with us',
+      'News and Blogs',
+      'Our Quality Commitment',
+      'Our Partners',
+      'Downloads',
+      'OEM Implementation Services',
+      'Sliding Doors and Lifts'
+    ],
+  },
+  {
+    name: 'Downloads',
+    href: '#',
+  },
+  {
+    name: 'Our Contact',
+    href: '#',
+  }
 ]
+
 
 export default function LandingPage() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -297,10 +332,10 @@ export default function LandingPage() {
             <div className="max-w-3xl">
               <p className="text-xl mb-2">Superior Structural Performance and Regulation Compliant</p>
               <h1 className="text-5xl font-bold mb-4 leading-tight">Building Solutions for Architectural and Functional Project Needs</h1>
-              <p className="text-lg mb-6">
+              <p className="text-lg mb-6 opacity-90">
                 We Are, Suppliers Of Superior Quality Products In Commercial UPS And Aluminum Profiles For Wide Applications To Saudi Arabian Projects. We Also Extend Supplier Integration Services With Our Key Strategic Partners In Consulting And End-to-end Project Implementation.
               </p>
-              <p className="text-xl mb-4">Discover How Our Innovative Products Can Elevate Your Next Project</p>
+              <p className="text-xl mb-4 opacity-80">Discover How Our Innovative Products Can Elevate Your Next Project</p>
               <button className="bg-yellow-500 text-white-900 px-8 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors">
                 Inquire Now
               </button>
