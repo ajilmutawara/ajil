@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronRight, Linkedin, Phone, Globe, Search } from 'lucide-react'
 
-
-
 const menuItems = [
   {
     name: 'Solutions',
@@ -56,7 +54,6 @@ const menuItems = [
           'B2B Sales',
         ]
       },
-
       {
         name: 'Solutions Consulting',
         href: '#solutions-consulting',
@@ -109,7 +106,6 @@ const menuItems = [
     href: '#',
   }
 ]
-
 
 export default function LandingPage() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -250,22 +246,29 @@ export default function LandingPage() {
           </button>
         </div>
         {/* Mobile Menu */}
-        <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} bg-[#121212] absolute top-full left-0 right-0 z-50`}>
+        <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} bg-[#121212] absolute top-full left-0 right-0 z-50 overflow-y-auto max-h-[calc(100vh-4rem)]`}>
           <nav className="container mx-auto px-4 py-4">
             {menuItems.map((item) => (
-              <div key={item.name} className="py-2">
+              <div key={item.name} className="py-2 border-b border-gray-700">
                 <button
-                  className="flex items-center justify-between w-full text-left"
+                  className="flex items-center justify-between w-full text-left py-2"
                   onClick={() => toggleDropdown(item.name)}
                   aria-expanded={activeDropdown === item.name}
                 >
-                  <span>{item.name}</span>
-                  {item.items && <ChevronDown size={16} />}
+                  <span className="text-lg font-semibold">{item.name}</span>
+                  {item.items && (
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-200 ${
+                        activeDropdown === item.name ? 'rotate-180' : ''
+                      }`}
+                    />
+                  )}
                 </button>
                 {item.items && activeDropdown === item.name && (
                   <div className="mt-2 pl-4">
                     {item.items.map((subItem) => (
-                      <div key={typeof subItem === 'string' ? subItem : subItem.name}>
+                      <div key={typeof subItem === 'string' ? subItem : subItem.name} className="py-2">
                         {typeof subItem === 'string' ? (
                           <Link
                             href="#"
@@ -277,25 +280,32 @@ export default function LandingPage() {
                           <div>
                             <button
                               onClick={(e) => toggleSubmenu(e, subItem.name)}
-                              className="flex items-center justify-between w-full text-left font-semibold text-lg mt-2 mb-1"
+                              className="flex items-center justify-between w-full text-left py-2"
                               aria-expanded={activeSubmenu === subItem.name}
                             >
-                              <span>{subItem.name}</span>
-                              <ChevronDown size={16} />
+                              <span className="font-medium">{subItem.name}</span>
+                              <ChevronDown
+                                size={16}
+                                className={`transition-transform duration-200 ${
+                                  activeSubmenu === subItem.name ? 'rotate-180' : ''
+                                }`}
+                              />
                             </button>
-                            {activeSubmenu === subItem.name && (
-                              <div className="pl-4">
-                                {subItem.items.map((nestedItem) => (
-                                  <Link
-                                    key={nestedItem}
-                                    href={`${subItem.href}#${nestedItem.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="block py-1 text-gray-300 hover:text-white transition-colors"
-                                  >
-                                    {nestedItem}
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
+                            <div
+                              className={`pl-4 overflow-hidden transition-all duration-200 ${
+                                activeSubmenu === subItem.name ? 'max-h-96' : 'max-h-0'
+                              }`}
+                            >
+                              {subItem.items.map((nestedItem) => (
+                                <Link
+                                  key={nestedItem}
+                                  href={`${subItem.href}#${nestedItem.toLowerCase().replace(/\s+/g, '-')}`}
+                                  className="block py-2 text-gray-300 hover:text-white transition-colors"
+                                >
+                                  {nestedItem}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         )}
                       </div>
@@ -304,17 +314,17 @@ export default function LandingPage() {
                 )}
               </div>
             ))}
-            <div className="flex items-center space-x-4 mt-4">
-              <Link href="#" aria-label="LinkedIn">
+            <div className="flex items-center space-x-4 mt-4 py-2">
+              <Link href="#" aria-label="LinkedIn" className="text-gray-300 hover:text-white">
                 <Linkedin size={20} />
               </Link>
-              <Link href="#" aria-label="Phone">
+              <Link href="#" aria-label="Phone" className="text-gray-300 hover:text-white">
                 <Phone size={20} />
               </Link>
-              <Link href="#" aria-label="Language">
+              <Link href="#" aria-label="Language" className="text-gray-300 hover:text-white">
                 <Globe size={20} />
               </Link>
-              <Link href="#" aria-label="Search">
+              <Link href="#" aria-label="Search" className="text-gray-300 hover:text-white">
                 <Search size={20} />
               </Link>
             </div>
@@ -324,19 +334,19 @@ export default function LandingPage() {
 
       <main className="flex-grow">
         <section 
-          className="relative h-screen bg-cover bg-center flex items-center" 
+          className="relative min-h-screen bg-cover bg-center flex items-center" 
           style={{ backgroundImage: 'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-VQT8xNQyRGO5pfKXhTrHFpm3KnS74d.jpg")' }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-30"></div>
           <div className="container mx-auto px-4 z-10 text-white">
-            <div className="max-w-3xl">
-              <p className="text-xl mb-2">Superior Structural Performance and Regulation Compliant</p>
-              <h1 className="text-5xl font-bold mb-4 leading-tight">Building Solutions for Architectural and Functional Project Needs</h1>
-              <p className="text-lg mb-6 opacity-90">
+            <div  className="max-w-3xl">
+              <p className="text-lg md:text-xl mb-2">Superior Structural Performance and Regulation Compliant</p>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Building Solutions for Architectural and Functional Project Needs</h1>
+              <p className="text-base md:text-lg mb-6 opacity-90">
                 We Are, Suppliers Of Superior Quality Products In Commercial UPS And Aluminum Profiles For Wide Applications To Saudi Arabian Projects. We Also Extend Supplier Integration Services With Our Key Strategic Partners In Consulting And End-to-end Project Implementation.
               </p>
-              <p className="text-xl mb-4 opacity-80">Discover How Our Innovative Products Can Elevate Your Next Project</p>
-              <button className="bg-yellow-500 text-white-900 px-8 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors">
+              <p className="text-lg md:text-xl mb-4 opacity-80">Discover How Our Innovative Products Can Elevate Your Next Project</p>
+              <button className="bg-yellow-500 text-white-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors text-sm md:text-base">
                 Inquire Now
               </button>
             </div>
@@ -346,7 +356,7 @@ export default function LandingPage() {
 
       <footer className="bg-[#121212] text-white py-4 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 Ajil Mutawara. All rights reserved.</p>
+          <p>&copy; 2024 Ajil Mutawara. All rights reserved.</p>
         </div>
       </footer>
     </div>
