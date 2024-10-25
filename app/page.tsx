@@ -396,7 +396,7 @@ export default function LandingPage() {
 
       <footer className="bg-[#121212] text-white py-4 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 Ajil Mutawara. All rights reserved.</p>
+          <p>&copy; 2024 Ajil Mutawara. All rights reserved.</p>
         </div>
       </footer>
     </div>
