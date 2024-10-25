@@ -386,7 +386,7 @@ export default function LandingPage() {
                 We Are, Suppliers Of Superior Quality Products In Commercial UPS And Aluminum Profiles For Wide Applications To Saudi Arabian Projects. We Also Extend Supplier Integration Services With Our Key Strategic Partners In Consulting And End-to-end Project Implementation.
               </p>
               <p className="text-base md:text-lg mb-6 opacity-90">Discover How Our Innovative Products Can Elevate Your Next Project</p>
-              <button className="bg-yellow-500 text-white-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors text-sm md:text-base">
+              <button className="bg-yellow-600 text-black-900 px-6 py-3 rounded-md font-semibold hover:bg-green-700 transition-colors text-sm md:text-base">
                 Inquire Now
               </button>
             </div>
@@ -394,7 +394,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-[#FFB000] text-white py-4 border-t border-gray-800">
+      <footer className="bg-[#2B2C2D] text-white py-4 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 Ajil Mutawara. All rights reserved.</p>
         </div>
